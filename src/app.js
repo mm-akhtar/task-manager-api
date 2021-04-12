@@ -6,18 +6,14 @@ const taskRouter = require('./routers/task')
 
 const app = express()
 
-
-
-
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
 
+// console.log(process.env.MONGODB_URL)
 
+module.exports = app
 
-// Listen
-const port = process.env.PORT
-app.listen(port, () => console.log(`app listening on port port! ${port}`))
 
 // middleware should be before app.use(route)
 // app.use((req, res, next) => {
